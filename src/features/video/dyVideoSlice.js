@@ -18,7 +18,7 @@ export const fetchDyVideo = createAsyncThunk(
 );
 
 const dyVideoSlice = createSlice({
-  name: "dyVideos",
+  name: "video",
   initialState,
   extraReducers: (builder) => {
     builder

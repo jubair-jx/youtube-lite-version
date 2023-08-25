@@ -9,10 +9,13 @@ const initialState = {
   error: "",
 };
 
-export const fetchVideo = createAsyncThunk("videos/fetchVideo", async () => {
-  const videos = await getVideos();
-  return videos;
-});
+export const fetchVideo = createAsyncThunk(
+  "videos/fetchVideo",
+  async ({ tags, search }) => {
+    const videos = await getVideos(tags, search);
+    return videos;
+  }
+);
 
 const videoSlice = createSlice({
   name: "videos",
